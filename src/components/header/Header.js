@@ -1,23 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
-import BottomContainer from './BottomContainer'
-import TopContainer from './TopContainer'
-
-const Container = styled.div`
-    max-width: 1160px;
-    position: relative;
-    margin: 0 auto;
-`
+import React from "react";
+import styled from "styled-components";
+import MainTab from "./MainTab";
+import Nav from "./Nav";
 
 function Header() {
-    return (
-        <div>
-            <Container>
-                <TopContainer />
-                <BottomContainer />
-            </Container>
-        </div>
-    )
+  return (
+    <div
+      style={{
+        background:
+          "url(/asset/head-banner-bg-new-1920.webp)no-repeat  center -550px / cover",
+      }}
+    >
+      <Nav />
+      <MainTab />
+    </div>
+  );
 }
 
-export default Header
+export default Header;

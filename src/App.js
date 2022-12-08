@@ -1,8 +1,12 @@
+import { Reset } from 'styled-reset'
 import Header from './components/header/Header';
 
 function App() {
   return (
-    <Header />
+    <>
+      <Reset />
+      <Header />
+    </>
   );
 }
 
