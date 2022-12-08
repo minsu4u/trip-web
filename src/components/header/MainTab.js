@@ -8,6 +8,7 @@ import {
   faCar,
   faBolt,
   faPlaneDeparture,
+  faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Wrap = styled.div`
@@ -66,18 +67,49 @@ const MainTabTitle = styled.ul`
     border-radius: 32px;
     color: #fff;
     cursor: pointer;
+    & > svg {
+      margin-right: 5px;
+    }
   }
   & > li:last-child {
     margin-right: 0px;
+    & > svg:first-child {
+      margin-right: 0;
+    }
   }
 `;
-const MainTabRoundBox = styled.article`
+const MainTabRoundBox = styled.section`
   border-radius: 8px;
   padding-top: 23px;
   background-color: #fff;
+  & > article {
+    display: flex;
+  }
+`;
+
+const InputBox = styled.input`
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+  height: 100%;
+  padding: 26px 0 0;
+  margin: 0 16px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
 `;
 
 function MainTab() {
+  const menu = [
+    { name: "호텔", icon: faHotel },
+    { name: "항공권", icon: faPlane },
+    { name: "기차표", icon: faTrain },
+    { name: "렌터카·공항픽업", icon: faCar },
+    { name: "액티비티", icon: faBolt },
+    { name: "항공 + 호텔", icon: [faPlaneDeparture, faHotel] },
+  ];
   return (
     <Wrap>
       <Title>
@@ -88,39 +120,22 @@ function MainTab() {
         </SubTitle>
       </Title>
       <MainTabTitle>
-        <li>
-          <FontAwesomeIcon icon={faHotel} />
-          호텔
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faPlane} />
-          항공권
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faTrain} />
-          기차표
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faCar} />
-          렌터카·공항픽업
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faBolt} />
-          액티비티
-        </li>
-        <li>
-          <FontAwesomeIcon icon={faPlaneDeparture} />
-          <FontAwesomeIcon icon={faHotel} />
-          항공 + 호텔
-        </li>
+        {menu.map((item) => (
+          <li>
+            {!Array.isArray(item.icon) ? (
+              <FontAwesomeIcon icon={item.icon} />
+            ) : (
+              <>
+                <FontAwesomeIcon icon={item?.icon[0]} />
+                <FontAwesomeIcon icon={item?.icon[1]} />
+              </>
+            )}
+            {item.name}
+          </li>
+        ))}
       </MainTabTitle>
       <MainTabRoundBox>
-        <div>호텔</div>
-        <div>항공권</div>
-        <div>기차표</div>
-        <div>렌터카.공항픽업</div>
-        <div>액티비티</div>
-        <div>항공+호텔</div>
+        <article></article>
       </MainTabRoundBox>
     </Wrap>
   );

@@ -7,6 +7,7 @@ const Wrap = styled.div`
   max-width: 1920px;
   position: relative;
   margin: 0 auto;
+  padding: 0 32px;
 `;
 
 function Nav() {

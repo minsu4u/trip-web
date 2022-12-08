@@ -4,7 +4,7 @@ import MainTab from "./MainTab";
 import Nav from "./Nav";
 
 const Wrap = styled.div`
-  background: url(/asset/head-banner-bg-new-1920.webp) no-repeat center -550px /
+  background: #0041c5 url(/asset/head-banner-bg-new-1920.webp) no-repeat center -550px /
     cover;
 `;
 
