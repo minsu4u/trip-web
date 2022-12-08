@@ -3,17 +3,17 @@ import styled from "styled-components";
 import MainTab from "./MainTab";
 import Nav from "./Nav";
 
+const Wrap = styled.div`
+  background: url(/asset/head-banner-bg-new-1920.webp) no-repeat center -550px /
+    cover;
+`;
+
 function Header() {
   return (
-    <div
-      style={{
-        background:
-          "url(/asset/head-banner-bg-new-1920.webp)no-repeat  center -550px / cover",
-      }}
-    >
+    <Wrap>
       <Nav />
       <MainTab />
-    </div>
+    </Wrap>
   );
 }
 
