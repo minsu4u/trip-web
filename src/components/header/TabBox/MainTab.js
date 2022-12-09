@@ -10,6 +10,13 @@ import {
   faPlaneDeparture,
   faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import TabHotel from "./TabHotel";
+import TabPlane from "./TabPlane";
+import TabTrain from "./TabTrain";
+import TabCar from "./TabCar";
+import TabBolt from "./TabBolt";
+import TabPlaneDeparture from "./TabPlaneDeparture";
 
 const Wrap = styled.div`
   z-index: 3;
@@ -87,21 +94,8 @@ const MainTabRoundBox = styled.section`
   }
 `;
 
-const InputBox = styled.input`
-  box-sizing: border-box;
-  width: calc(100% - 32px);
-  height: 100%;
-  padding: 26px 0 0;
-  margin: 0 16px;
-  border: none;
-  border-bottom: 2px solid transparent;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-weight: 700;
-`;
-
 function MainTab() {
+  const [tabIndex, setTabIndex] = useState("0");
   const menu = [
     { name: "호텔", icon: faHotel },
     { name: "항공권", icon: faPlane },
@@ -110,6 +104,28 @@ function MainTab() {
     { name: "액티비티", icon: faBolt },
     { name: "항공 + 호텔", icon: [faPlaneDeparture, faHotel] },
   ];
+  const tabClickHandler = (e) => {
+    const selectId = e.currentTarget.id;
+    setTabIndex(selectId);
+  };
+  const matchTabBox = (id) => {
+    switch (id) {
+      case "0":
+        return <TabHotel />;
+      case "1":
+        return <TabPlane />;
+      case "2":
+        return <TabTrain />;
+      case "3":
+        return <TabCar />;
+      case "4":
+        return <TabBolt />;
+      case "5":
+        return <TabPlaneDeparture />;
+      default:
+        return;
+    }
+  };
   return (
     <Wrap>
       <Title>
@@ -120,8 +136,8 @@ function MainTab() {
         </SubTitle>
       </Title>
       <MainTabTitle>
-        {menu.map((item) => (
-          <li>
+        {menu.map((item, idx) => (
+          <li key={idx} id={idx} onClick={tabClickHandler}>
             {!Array.isArray(item.icon) ? (
               <FontAwesomeIcon icon={item.icon} />
             ) : (
@@ -134,9 +150,7 @@ function MainTab() {
           </li>
         ))}
       </MainTabTitle>
-      <MainTabRoundBox>
-        <article></article>
-      </MainTabRoundBox>
+      <MainTabRoundBox>{matchTabBox(tabIndex)}</MainTabRoundBox>
     </Wrap>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import MainTab from "./MainTab";
-import Nav from "./Nav";
+import Nav from "./Nav/Nav";
+import MainTab from "./TabBox/MainTab";
 
 const Wrap = styled.div`
   background: #0041c5 url(/asset/head-banner-bg-new-1920.webp) no-repeat center -550px /

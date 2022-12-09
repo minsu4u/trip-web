@@ -71,13 +71,13 @@ function BottomContainer() {
   return (
     <Nav>
       <NavUl>
-        {navList.map((item) => (
-          <NavLi>
+        {navList.map((item, idx) => (
+          <NavLi key={idx}>
             <NavLiALink href={item?.link}>{item.name}</NavLiALink>
             {item?.sub && (
               <NavSubUl>
-                {item?.sub.map((item) => (
-                  <NavSubLi>
+                {item?.sub.map((item, idx) => (
+                  <NavSubLi key={idx}>
                     <NavSubLiALink href={item?.link}>{item.name}</NavSubLiALink>
                   </NavSubLi>
                 ))}
