@@ -1,15 +1,11 @@
 import { Reset } from "styled-reset";
-import Notice from "./components/Event/Notice/Notice";
-import Slide from "./components/Event/Slide/Slide";
-import Header from "./components/Header/Header";
+import Main from "./pages/Main";
 
 function App() {
   return (
     <>
       <Reset />
-      <Header />
-      <Notice />
-      <Slide />
+      <Main />
     </>
   );
 }

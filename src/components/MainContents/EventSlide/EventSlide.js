@@ -4,6 +4,7 @@ import styled from "styled-components";
 const SlideWrap = styled.article`
   width: 1160px;
   position: relative;
+  margin: 82px auto 0;
 `;
 const Button = styled.button`
   width: 40px;
@@ -44,7 +45,7 @@ const SlideBelt = styled.div`
   }
 `;
 
-function Slide() {
+function EventSlide() {
   // 1. SlideContainer의 transform: translateX(-${넓이값*호출갯수}px);
   const slideMoveHandler = () => {
     //
@@ -67,4 +68,4 @@ function Slide() {
   );
 }
 
-export default Slide;
+export default EventSlide;
