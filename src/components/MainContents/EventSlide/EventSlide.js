@@ -36,8 +36,7 @@ const SlideContainer = styled.div`
   width: 100%;
   overflow: hidden;
 `;
-const SlideBelt = styled.div`
-  display: inline-flex;
+const SlideBelt = styled.div.attrs({ className: "roundBoxs" })`
   a {
     display: block;
     width: calc((1160px / 3) - 16px);

@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrap = styled.article.attrs({ className: "wrap-inner contentsBg" })``;
+const PopularRouteWrap = styled.article.attrs({
+  className: "wrap-inner contentsBg",
+})``;
 const Title = styled.h1`
   color: #0f294d;
   font-weight: 700;
@@ -32,23 +34,26 @@ const RoundBox = styled.div`
   margin: 0 8px;
 `;
 
-function NowDestinations() {
+function PopularRoute() {
   return (
-    <Wrap>
-      <Title>지금 갈 수 있는 여행지 - 대한민국 출발</Title>
+    <PopularRouteWrap>
+      <Title>인기 노선별 특가</Title>
       <TagWrap>
-        <Tag>두 국가/지역 간 왕복 가능</Tag>
-        <Tag>격리 면제 또는 격리 기간 24시간 미만</Tag>
-        <Tag>특가 혜택 적용 가능</Tag>
+        <Tag>요금 잠그미</Tag>
+        <Tag>가격 알리미 기능</Tag>
+        <Tag>항공권 예약 보장제</Tag>
       </TagWrap>
-      <RoundBoxs className="">
-        <RoundBox></RoundBox>
-        <RoundBox></RoundBox>
-        <RoundBox></RoundBox>
-        <RoundBox></RoundBox>
-      </RoundBoxs>
-    </Wrap>
+      <div>
+        <div>서울</div>
+        <RoundBoxs className="">
+          <RoundBox></RoundBox>
+          <RoundBox></RoundBox>
+          <RoundBox></RoundBox>
+          <RoundBox></RoundBox>
+        </RoundBoxs>
+      </div>
+    </PopularRouteWrap>
   );
 }
 
-export default NowDestinations;
+export default PopularRoute;

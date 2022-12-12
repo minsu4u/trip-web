@@ -1,10 +1,10 @@
-import { Reset } from "styled-reset";
-import Main from "./pages/Main";
+import GlobalStyle from "./GlobalStyles";
+import Main from "./pages/Main/Main";
 
 function App() {
   return (
     <>
-      <Reset />
+      <GlobalStyle />
       <Main />
     </>
   );

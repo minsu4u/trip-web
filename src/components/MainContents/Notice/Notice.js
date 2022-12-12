@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrap = styled.article`
+const NoticeWrap = styled.article.attrs({ className: "wrap-inner" })`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  margin: 0 auto;
-  max-width: 1160px;
   padding: 11px 16px;
   background: #fff4eb;
   border-radius: 8px;
@@ -44,14 +42,14 @@ const Link = styled.a`
 
 function Notice() {
   return (
-    <Wrap>
+    <NoticeWrap>
       <Title>다시, 설레이는 해외여행의 시작</Title>
       <Link href="">
         <Img />
         일본은 2022년 10월 11일부터 입국 규제가 완화되어 무비자 개인 여행이
         가능해집니다.
       </Link>
-    </Wrap>
+    </NoticeWrap>
   );
 }
 
