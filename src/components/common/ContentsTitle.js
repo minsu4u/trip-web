@@ -30,13 +30,12 @@ const TagWrap = styled.ul`
 `;
 
 function ContentsTitle({ titleText, subTitle, imgSrc }) {
-  console.log(subTitle);
   return (
     <>
       <Title>{titleText}</Title>
       <TagWrap>
-        {subTitle.map((item) => (
-          <li>
+        {subTitle.map((item, idx) => (
+          <li key={idx}>
             {imgSrc ? (
               <img src={item.img} alt={item.txt} />
             ) : (

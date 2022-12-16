@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import SlideBtn from "../../common/SlideBtn";
 
 const SlideWrap = styled.article`
   width: 1160px;
@@ -51,7 +53,6 @@ function EventSlide() {
   };
   return (
     <SlideWrap>
-      <PrevBtn />
       <SlideContainer>
         <SlideBelt>
           <a href="">1</a>
@@ -62,7 +63,24 @@ function EventSlide() {
           <a href="">6</a>
         </SlideBelt>
       </SlideContainer>
-      <NextBtn onClick={slideMoveHandler} />
+      <SlideBtn
+        direction={"left"}
+        round={50}
+        icon={faAngleLeft}
+        wd={40}
+        hg={40}
+        leftValue={20}
+        rightValue={20}
+      />
+      <SlideBtn
+        direction={"right"}
+        round={50}
+        icon={faAngleRight}
+        wd={40}
+        hg={40}
+        leftValue={20}
+        rightValue={20}
+      />
     </SlideWrap>
   );
 }

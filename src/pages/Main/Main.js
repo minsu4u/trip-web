@@ -13,6 +13,7 @@ import {
   faMobileScreenButton,
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import NowConfirmBtn from "../../components/common/NowConfirmBtn";
 
 function Main() {
   const sidebaricons = [
@@ -31,6 +32,9 @@ function Main() {
       <PopularRoute />
       <AppDownLoad />
       <SideBar icon={sidebaricons} />
+      <div style={{ width: "300px" }}>
+        <NowConfirmBtn />
+      </div>
     </div>
   );
 }
