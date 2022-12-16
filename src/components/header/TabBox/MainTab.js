@@ -95,7 +95,7 @@ const MainTabRoundBox = styled.section`
 `;
 
 function MainTab() {
-  const [tabIndex, setTabIndex] = useState("0");
+  const [tabIndex, setTabIndex] = useState(0);
   const menu = [
     { name: "호텔", icon: faHotel },
     { name: "항공권", icon: faPlane },
@@ -104,28 +104,27 @@ function MainTab() {
     { name: "액티비티", icon: faBolt },
     { name: "항공 + 호텔", icon: [faPlaneDeparture, faHotel] },
   ];
+  const selectStyle = (id) => ({
+    background: `${tabIndex === id ? "#fff" : "transparent"}`,
+    color: `${tabIndex === id ? "#0f294d" : "#fff"}`,
+  });
   const tabClickHandler = (e) => {
-    const selectId = e.currentTarget.id;
+    const target = e.currentTarget;
+    const selectId = parseInt(target.id);
     setTabIndex(selectId);
   };
   const matchTabBox = (id) => {
-    switch (id) {
-      case "0":
-        return <TabHotel />;
-      case "1":
-        return <TabPlane />;
-      case "2":
-        return <TabTrain />;
-      case "3":
-        return <TabCar />;
-      case "4":
-        return <TabBolt />;
-      case "5":
-        return <TabPlaneDeparture />;
-      default:
-        return;
-    }
+    const arr = [
+      <TabHotel />,
+      <TabPlane />,
+      <TabTrain />,
+      <TabCar />,
+      <TabBolt />,
+      <TabPlaneDeparture />,
+    ];
+    return arr[id];
   };
+
   return (
     <Wrap>
       <Title>
@@ -137,7 +136,12 @@ function MainTab() {
       </Title>
       <MainTabTitle>
         {menu.map((item, idx) => (
-          <li key={idx} id={idx} onClick={tabClickHandler}>
+          <li
+            key={idx}
+            id={idx}
+            onClick={tabClickHandler}
+            style={selectStyle(idx)}
+          >
             {!Array.isArray(item.icon) ? (
               <FontAwesomeIcon icon={item.icon} />
             ) : (

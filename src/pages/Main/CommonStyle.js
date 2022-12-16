@@ -1,13 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const MainCommonStyles = createGlobalStyle`
-    .tag{
-        *{margin-right: 16px;}
-        display: flex;
-        height: 18px;
-        align-items: center;
-        font-size: 14px;
-    }
+    
     .tabBtn{
         *{
             border-radius: 4px;

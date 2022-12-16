@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import ContentsTitle from "../../common/ContentsTitle";
+import TabBtn from "../../common/TabBtn";
+import { useState } from "react";
 
 const Wrap = styled.article.attrs({ className: "wrap-inner contentsBg" })``;
 const Title = styled.h1`
@@ -18,10 +23,8 @@ const Title = styled.h1`
   z-index: 1;
   margin-bottom: 8px;
 `;
-const TagWrap = styled.article.attrs({ className: "tag" })``;
-const Tag = styled.span``;
 const RoundBoxs = styled.div.attrs({ className: "roundBoxs" })`
-  *:last-child {
+  & > *:last-child {
     margin-right: 0;
   }
 `;
@@ -33,20 +36,35 @@ const RoundBox = styled.div`
 `;
 
 function NowDestinations() {
+  const subTitle = [
+    {
+      txt: "두 국가/지역 간 왕복 가능",
+      img: faCheck,
+    },
+    {
+      txt: "격리 면제 또는 격리 기간 24시간 미만",
+      img: faCheck,
+    },
+    {
+      txt: "특가 혜택 적용 가능",
+      img: faCheck,
+    },
+  ];
+  const [tabIndex, setTabIndex] = useState(0);
+
   return (
     <Wrap>
-      <Title>지금 갈 수 있는 여행지 - 대한민국 출발</Title>
-      <TagWrap>
-        <Tag>두 국가/지역 간 왕복 가능</Tag>
-        <Tag>격리 면제 또는 격리 기간 24시간 미만</Tag>
-        <Tag>특가 혜택 적용 가능</Tag>
-      </TagWrap>
-      <RoundBoxs className="">
-        <RoundBox></RoundBox>
-        <RoundBox></RoundBox>
-        <RoundBox></RoundBox>
-        <RoundBox></RoundBox>
-      </RoundBoxs>
+      <ContentsTitle
+        titleText="지금 갈 수 있는 여행지 - 대한민국 출발"
+        subTitle={subTitle}
+        imgSrc={false}
+      />
+      <TabBtn
+        arr={["서울", "부산"]}
+        tabIndex={tabIndex}
+        clickHandler={setTabIndex}
+      />
+      <RoundBoxs className="">{tabIndex}</RoundBoxs>
     </Wrap>
   );
 }

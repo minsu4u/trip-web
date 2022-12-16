@@ -1,23 +1,47 @@
-todo
-
--Main 생성
-
-1.영역나누기 및 배경 코딩.
-
-공통 스타일 - 큰제목x, 넓이x 
-메인 공통 스타일 - 태그x, 탭 버튼x, 배경 x
-슬라이드 공통 스타일 - 
-라운드박스 공통 스타일 - x
-
-1-1. 이벤트 슬라이드 (공통 슬라이드) 
-1-2. 지금 갈 수 있는 여행지 (공통 슬라이드) 
-1-3. 인기 노선별 특가 (공통 스타일)
-1-4. 인기 숙소 (공통 스타일)
-1-5. 추천 렌터카 (공통 스타일)
-1-6. 나만 알고 싶은 여행지 (공통 스타일)
-1-7. 여행이 필요할 때, 트립닷컴
-1-8. 푸터
-1-9. 사이드 바
-
-
 대상, 시점, 이벤트
+
+todo
+//공통 컴포넌트
+탭버튼, 슬라이드 방향 버튼, 링크 검색 버튼, 호버 라운드 이미지 박스
+
+//component 폴더 구조
+
+components
+    commons
+        ContentsTitle.js(헤딩, 태그)
+        SideBar.js
+        TabBtn.js
+        SlideBtn.js
+        LinkBtn.js
+        HoverLoundLinkImg.js
+        SearchScrollList.js
+    Header
+    Footer
+    Main
+        Notice
+            style.js
+            Notice.js
+        EventSlide (슬라이드)
+            style.js
+            EventSlide.js
+            EventSlideObjects.js
+        NowDestinations (슬라이드)
+            style.js
+            NowDestinations.js
+            NowDestinationsObjects.js
+        PopularRoute (탭)
+            style.js
+            PopularRoute.js
+            PopularRouteObjects.js
+        AppDownLoad (탭, 리스트)
+            style.js
+            AppDownLoad.js
+            LocalNumList.js       
+page
+    Main.js
+    기타.js
+    ....
+
+src
+    App.css
+    App.js
