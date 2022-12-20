@@ -8,7 +8,6 @@ import {
   faCar,
   faBolt,
   faPlaneDeparture,
-  faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import TabHotel from "./TabHotel";
@@ -53,6 +52,29 @@ const SubTitle = styled.div`
   justify-content: center;
   margin-top: 12px;
   margin-bottom: 24px;
+  & > span {
+    padding-left: 20px;
+    display: inline-block;
+    position: relative;
+  }
+  & > span:nth-child(1) {
+    background: url(asset/0AS6b1200090fx7s7F635.webp) no-repeat left center /
+      16px;
+    margin-right: 16px;
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 60%;
+      background-color: #fff;
+      vertical-align: -1px;
+      margin-left: 16px;
+    }
+  }
+  & > span:nth-child(2) {
+    background: url(asset/0AS2j120009gx8xgh56D3.webp) no-repeat left center /
+      16px;
+  }
 `;
 const MainTabTitle = styled.ul`
   background: rgba(15, 41, 77, 0.8);

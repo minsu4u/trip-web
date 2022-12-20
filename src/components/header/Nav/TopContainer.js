@@ -1,36 +1,28 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FaSearch, FaMobileAlt, FaFontAwesomeFlag } from "react-icons/fa";
-import { VscTriangleDown } from "react-icons/vsc";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFlag } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-const ContentsBox = styled.div``;
+const LeftMenuContainer = styled.div``;
 
-const ATag = styled.a.attrs({ href: "#" })`
-  color: #000;
-  text-decoration: none;
-  &:hover {
-    color: #3264ff;
-  }
-  & > svg {
-    vertical-align: middle;
-  }
-`;
+const Logo = styled.a.attrs({ href: "#" })``;
+
 const LogoImg = styled.img`
   width: 124px;
   height: 30px;
   cursor: pointer;
-  padding: 16px 24px 14px 0;
+  padding: 16px 32px 16px 0;
   vertical-align: middle;
 `;
 const Search = styled.span`
   display: inline-block;
   position: relative;
   width: 300px;
-  padding-right: 30px;
   border-radius: 4px;
   box-sizing: border-box;
   border: 1px solid #dadfe6;
@@ -39,9 +31,9 @@ const SearchInput = styled.input`
   width: 100%;
   height: 32px;
   border: 0;
-  border-radius: 4px;
   box-sizing: border-box;
   padding: 8px;
+  padding-right: 38px;
   outline: none;
 `;
 const SearchButton = styled.button`
@@ -59,59 +51,79 @@ const SearchButton = styled.button`
     vertical-align: middle;
   }
 `;
-const Split = styled.span`
-  display: inline-block;
-  width: 1px;
-  height: 14px;
-  margin: 23px 4px;
-  background-color: #fff;
-  border-right: 1px solid #ced2d9;
+
+const RightMenuContainer = styled.div`
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  & > a {
+    color: #fff;
+    text-decoration: none;
+    margin: 16px 4px;
+    padding: 8px;
+    height: 34px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  & > a:hover {
+    color: #fff;
+    background-color: hsla(0, 0%, 100%, 0.3);
+  }
+`;
+
+const CustomButton = styled.a`
+  background: hsla(0, 0%, 100%, 0.3);
+  ${(props) =>
+    props.type === "type1" &&
+    css`
+      &:hover {
+        color: #3264ff !important;
+        background-color: #fff !important;
+      }
+    `}
+  ${(props) =>
+    props.type === "type2" &&
+    css`
+      background-color: #fff;
+      color: #0f294d !important;
+      &:hover {
+        color: #3264ff !important;
+        background-color: #fff !important;
+      }
+    `}
 `;
 
 function TopContainer() {
   return (
     <Container>
-      <ContentsBox>
-        <ATag>
-          <LogoImg src="/asset/logo.png" />
-        </ATag>
+      <LeftMenuContainer>
+        <Logo>
+          <LogoImg src="/asset/192d0a02740d20818b21c2b09c561a14.192d0a02740d20818b21c2b09c561a14.svg" />
+        </Logo>
         <Search>
           <SearchInput placeholder="여행지, 명소, 호텔 등으로 검색" />
           <SearchButton>
             <FaSearch />
           </SearchButton>
         </Search>
-      </ContentsBox>
-      <ContentsBox
-        style={{ fontSize: "12px", display: "flex", alignItems: "center" }}
-      >
-        <ATag style={{ marginRight: "10px" }}>
-          <FaMobileAlt style={{ fontSize: "18px" }} />
-          App
-        </ATag>
-        <ATag>고객센터</ATag>
-        <Split />
-        <ATag style={{ marginRight: "10px" }}>
-          <FaFontAwesomeFlag />
-          <VscTriangleDown style={{}} />
-        </ATag>
-        <ATag>
-          KRW
-          <VscTriangleDown style={{}} />
-        </ATag>
-        <Split />
-        <ATag style={{ marginRight: "10px" }}>예약 검색</ATag>
-        <ATag
-          style={{
-            border: "1px solid rgb(50, 100, 255)",
-            padding: "5px 10px",
-            borderRadius: "3px",
-            color: "#3264ff",
-          }}
-        >
+      </LeftMenuContainer>
+      <RightMenuContainer>
+        <a href="#">App</a>
+        <a href="#">고객센터</a>
+        <a href="#">
+          <FontAwesomeIcon icon={faFlag} />
+        </a>
+        <a href="#">KRW</a>
+        <CustomButton href="#" type="type1">
+          예약 검색
+        </CustomButton>
+        <CustomButton href="#" type="type2">
           로그인 / 회원가입
-        </ATag>
-      </ContentsBox>
+        </CustomButton>
+      </RightMenuContainer>
     </Container>
   );
 }

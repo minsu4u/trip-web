@@ -8,13 +8,13 @@ todo
 
 components
     commons
-        ContentsTitle.js(헤딩, 태그) o
-        SideBar.js o
-        TabBtn.js o
-        SlideBtn.js o
-        NowConfirmBtn.js o
-        HoverLoundLinkImg.js
-        SearchScrollList.js
+        ContentsTitle.js(헤딩, 태그) x
+        SideBar.js x
+        TabBtn.js x
+        SlideBtn.js x
+        NowConfirmBtn.js x
+        HoverLoundLinkImg.js x
+        SearchScrollList.js 
     Header
     Footer
     Main

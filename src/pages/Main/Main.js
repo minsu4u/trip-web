@@ -12,9 +12,10 @@ import {
   faHeadset,
   faMobileScreenButton,
   faUserPlus,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import NowConfirmBtn from "../../components/common/NowConfirmBtn";
-
+import HoverLoundLinkImg from "../../components/common/HoverLoundLinkImg";
 function Main() {
   const sidebaricons = [
     faChevronUp,
@@ -35,6 +36,19 @@ function Main() {
       <div style={{ width: "300px" }}>
         <NowConfirmBtn />
       </div>
+      <HoverLoundLinkImg
+        wd={376}
+        hg={188}
+        imgSrc="./asset/0a12e120009bmggoyBE40.webp"
+      />
+      <HoverLoundLinkImg
+        type="type2"
+        wd={172}
+        hg={240}
+        country="홍콩"
+        icon={faChevronRight}
+        imgSrc="./asset/100a1f000001g4pqtBF5D_R_320_240_Q90_D.webp"
+      />
     </div>
   );
 }

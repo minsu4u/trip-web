@@ -8,6 +8,7 @@ const Wrap = styled.div`
   position: relative;
   margin: 0 auto;
   padding: 0 32px;
+  z-index: 4;
 `;
 
 function Nav() {
